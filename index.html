@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monsieur Bao — Créateurs français de baos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bandeau">
+    <p>Désormais disponible dans vos grandes surfaces.</p>
+  </div>
+
+  <header class="header" id="header">
+    <a href="#" class="header__logo" aria-label="Monsieur Bao accueil">
+      <img src="images/logo.png" alt="Monsieur Bao">
+    </a>
+    <button class="header__burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header__nav">
+      <a href="#accueil">Accueil</a>
+      <a href="#recettes">Nos recettes</a>
+      <a href="#engagements">Nos engagements</a>
+      <a href="#trouver">Trouver nos produits</a>
+      <a href="faq.html">Faq</a>
+      <a href="#contact">Nous contacter</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">Les vrais <span class="hero__title--caps">BAO.</span><br><em>Faits chaque jour.</em><br><em>Sans compromis.</em></h1>
+        <p class="hero__subtitle">Créateurs français de baos</p>
+      </div>
+    </section>
+
+    <section class="badges">
+      <span class="badges__item">FABRICATION FRANÇAISE</span>
+      <span class="badges__item">PRÊT EN 30 SECONDES</span>
+      <span class="badges__item">VIANDES FRANÇAISES</span>
+    </section>
+
+    <section class="origine" id="origine">
+      <div class="origine__inner">
+        <h2 class="origine__title">L'origine de Monsieur Bao</h2>
+        <p class="origine__lead">Monsieur Bao est né en restaurant. Pas sur une étagère.</p>
+        <p>Avant les rayons, il y avait les cuisines. Avant les volumes, il y avait les clients. Avant les recettes figées, il y avait des essais.</p>
+        <p>Le passage en supermarché n'a rien changé à l'essentiel : faire des bao comme on les ferait au restaurant.</p>
+      </div>
+    </section>
+
+    <section class="slider-section">
+      <div class="slider-section__track">
+        <div class="slider-section__slide">
+          <div class="slider-section__card">
+            <span class="slider-section__label">Brioche moelleuse</span>
+            <div class="slider-section__img" style="background-image: url('images/bao-brioche-moelleuse.png');"></div>
+          </div>
+        </div>
+        <div class="slider-section__slide">
+          <div class="slider-section__card">
+            <span class="slider-section__label">Farce savoureuse</span>
+            <div class="slider-section__img" style="background-image: url('https://static.wixstatic.com/media/c31954_f2438235de064af9964b83e36d5bae4f~mv2.jpg/v1/fill/w_400,h_400,al_c,q_80,enc_auto/c31954_f2438235de064af9964b83e36d5bae4f~mv2.jpg');"></div>
+          </div>
+        </div>
+        <div class="slider-section__slide">
+          <div class="slider-section__card">
+            <span class="slider-section__label">Cuisson à la vapeur</span>
+            <div class="slider-section__img" style="background-image: url('https://static.wixstatic.com/media/11062b_399cf36b40bd4abc9a2d36977a15243f~mv2.jpg/v1/fill/w_400,h_400,al_c,q_80,enc_auto/Vapeurs%20en%20bois.jpg');"></div>
+          </div>
+        </div>
+        <div class="slider-section__slide">
+          <div class="slider-section__card">
+            <span class="slider-section__label">Prêt à déguster</span>
+            <div class="slider-section__img" style="background-image: url('images/carte-pret-a-deguster.png');"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-blocks">
+      <div class="value-blocks__block">
+        <h2 class="value-blocks__title">Une brioche <em>moelleuse</em></h2>
+        <p>Notre pâte est préparée chaque jour et cuite à la vapeur pour une texture douce et nuageuse.</p>
+      </div>
+      <div class="value-blocks__block">
+        <h2 class="value-blocks__title">Cuite à la <em>vapeur</em></h2>
+        <p>La vapeur fait gonfler le bao et préserve les saveurs, sans ajout de matière grasse.</p>
+      </div>
+    </section>
+
+    <!-- Nos recettes : packs salés + packs sucrés -->
+    <section class="recettes" id="recettes">
+      <h2 class="recettes__heading">NOS RECETTES</h2>
+      <div class="recettes__double">
+        <div class="recettes__block">
+          <h3 class="recettes__subtitle">Au rayon surgelé salé</h3>
+          <img src="images/packs-sales.png" alt="Monsieur Bao — Packs salés : Effiloché de poulet, Légumes, Effiloché de porc, Végétarien" class="recettes__block-img">
+          <ul class="recettes__detail-list">
+            <li class="recettes__detail-item">
+              <strong>Effiloché de poulet</strong> — Champignons de Paris, saveur thym
+            </li>
+            <li class="recettes__detail-item">
+              <strong>Légumes</strong> — Thai, curcuma, curry doux
+            </li>
+            <li class="recettes__detail-item">
+              <strong>Effiloché de porc</strong> — Gingembre, sauce soja, arachide
+            </li>
+            <li class="recettes__detail-item">
+              <strong>Végétarien</strong> — Aubergine, lentins, huile de riz (<img src="images/la-vie-logo.png" alt="La Vie" class="recettes__brand-logo"> 100% végétal)
+            </li>
+          </ul>
+        </div>
+        <div class="recettes__block recettes__block--small">
+          <h3 class="recettes__subtitle">Au rayon surgelé sucré</h3>
+          <div class="recettes__block-img-wrap recettes__block-img-wrap--crop">
+            <img src="images/packs-sucres.png" alt="Monsieur Bao — Packs sucrés : Pâte à tartiner noisettes, Beurre de cacahuète" class="recettes__block-img">
+          </div>
+          <ul class="recettes__detail-list">
+            <li class="recettes__detail-item">
+              <strong>Pâte à tartiner noisettes</strong> — Aux éclats de noisettes (6 x 35g)
+            </li>
+            <li class="recettes__detail-item">
+              <strong>Beurre de cacahuète</strong> — Aux éclats de cacahuètes (6 x 35g)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="engagements" id="engagements">
+      <h2 class="engagements__heading">NOS ENGAGEMENTS</h2>
+      <div class="engagements__grid">
+        <div class="engagements__item">
+          <div class="engagements__icon" aria-hidden="true">
+            <svg class="engagements__picto" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 8C12 20 12 34 24 40c12-6 12-20 0-32z"/>
+              <path d="M24 8v32"/>
+            </svg>
+          </div>
+          <p class="engagements__label">FABRICATION FRANÇAISE,<br>VIANDES FRANÇAISES</p>
+        </div>
+        <div class="engagements__item">
+          <div class="engagements__icon" aria-hidden="true">
+            <svg class="engagements__picto" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 36 Q24 28 34 36"/>
+              <path d="M16 30 Q24 22 32 30"/>
+              <path d="M18 24 Q24 16 30 24" opacity="0.9"/>
+              <path d="M10 40 Q24 32 38 40"/>
+            </svg>
+          </div>
+          <p class="engagements__label">BRIOCHE MOELLEUSE,<br>CUITE À LA VAPEUR</p>
+        </div>
+        <div class="engagements__item">
+          <div class="engagements__icon" aria-hidden="true">
+            <svg class="engagements__picto" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="24" r="16"/>
+              <path d="M24 12v12l8 6"/>
+              <path d="M24 8v2M24 38v2M8 24h2M38 24h2M14 14l1.4 1.4M32.6 32.6l1.4 1.4M14 34l1.4-1.4M32.6 15.4l1.4-1.4"/>
+            </svg>
+          </div>
+          <p class="engagements__label">FORMAT PRATIQUE,<br>PRÊT EN 30 SECONDES</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="trouver" id="trouver">
+      <div class="trouver__inner">
+        <h2 class="trouver__title">TROUVER NOS PRODUITS</h2>
+        <p>Nos baos sont disponibles au rayon surgelé de vos grandes surfaces. Restez connectés pour découvrir les points de vente près de chez vous.</p>
+        <ul class="trouver__enseignes" aria-label="Enseignes partenaires">
+          <li class="trouver__enseigne">Carrefour</li>
+          <li class="trouver__enseigne">Franprix</li>
+          <li class="trouver__enseigne">Monoprix</li>
+          <li class="trouver__enseigne">Intermarché</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="newsletter" id="contact">
+      <div class="newsletter__inner">
+        <h2 class="newsletter__title">Vous souhaitez plus d'informations ?</h2>
+        <p>Pour l'instant, nous fabriquons minutieusement nos petits baos. Laissez-nous votre email pour recevoir plus d'infos sur nos produits.</p>
+        <form class="newsletter__form" action="https://formspree.io/f/meeljvkr" method="POST" aria-label="Inscription newsletter">
+          <label for="newsletter-email" class="visually-hidden">Email</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Email" required>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__address">
+        <p>28 rue de la République<br>92190 Meudon</p>
+        <p><a href="mailto:bonjour@monsieurbao.com">bonjour@monsieurbao.com</a></p>
+        <p><a href="tel:+33651801153">06 51 80 11 53</a></p>
+      </div>
+      <div class="footer__links">
+        <a href="#recettes">Nos recettes</a>
+        <a href="#origine">À propos</a>
+        <a href="#trouver">Trouver nos produits</a>
+        <a href="faq.html">Faq</a>
+        <a href="#contact">Nous contacter</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/monsieurbaofr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="https://www.linkedin.com/company/monsieur-bao/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+      <p class="footer__copy">© Monsieur Bao</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
