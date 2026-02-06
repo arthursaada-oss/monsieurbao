@@ -116,6 +116,13 @@ a:hover { text-decoration: underline; }
   opacity: 0.6;
 }
 .hero__content { position: relative; z-index: 1; max-width: 800px; }
+.hero__logo {
+  width: min(200px, 45vw);
+  height: auto;
+  margin: 0 auto var(--space-xl);
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
 .hero__title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 3.5rem);
