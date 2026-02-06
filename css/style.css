@@ -326,26 +326,36 @@ a:hover { text-decoration: underline; }
 }
 
 .origine {
-  padding: var(--space-3xl) var(--space-xl);
+  padding: var(--space-2xl) var(--space-xl);
   background: var(--color-bg);
 }
-.origine__inner { max-width: 640px; margin: 0 auto; text-align: center; }
+.origine__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+.origine__content {
+  text-align: left;
+  padding-right: var(--space-l);
+}
 .origine__title {
   font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 600;
-  margin: 0 0 var(--space-l);
+  margin: 0 0 var(--space-m);
   color: var(--color-text);
 }
 .origine__lead { font-size: 1.15rem; font-weight: 600; margin: 0 0 var(--space-m); color: var(--color-accent); }
-.origine__inner p { margin: 0 0 var(--space-m); color: var(--color-text-muted); }
-.origine__inner p:last-of-type { margin-bottom: 0; }
+.origine__content p { margin: 0 0 var(--space-m); color: var(--color-text-muted); }
+.origine__content p:last-of-type { margin-bottom: 0; }
 .origine__gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-m);
-  max-width: 800px;
-  margin: var(--space-2xl) auto 0;
+  margin: 0;
 }
 .origine__gallery-item {
   margin: 0;
@@ -513,6 +523,10 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--card-shadow-green-hover);
 }
 
+@media (min-width: 1024px) {
+  .trouver__inner { max-width: var(--max-width); }
+}
+
 .faq-section { padding: var(--space-2xl) var(--space-xl); background: var(--color-bg); text-align: center; }
 .faq-section--page { padding-top: var(--space-3xl); min-height: 50vh; }
 .faq-section__inner { max-width: 560px; margin: 0 auto; }
@@ -650,7 +664,9 @@ a:hover { text-decoration: underline; }
   .value-blocks { grid-template-columns: 1fr; }
   .avis__quotes { grid-template-columns: 1fr; }
   .engagements__grid { grid-template-columns: 1fr; }
-  .origine__gallery { grid-template-columns: 1fr; }
+  .origine__inner { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .origine__content { padding-right: 0; text-align: center; }
+  .origine__gallery { grid-template-columns: repeat(2, 1fr); }
   .footer__top { grid-template-columns: 1fr; text-align: center; }
   .footer__block { align-items: center; }
   .footer__address-item { text-align: center; }
@@ -681,5 +697,6 @@ a:hover { text-decoration: underline; }
   .hero { min-height: 70vh; padding: var(--space-2xl) var(--space-m); }
   .badges { flex-direction: column; align-items: center; }
   .newsletter__form { flex-direction: column; }
+  .origine__gallery { grid-template-columns: 1fr; }
   .newsletter__form input { min-width: 100%; }
 }
