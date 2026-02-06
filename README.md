@@ -1,6 +1,6 @@
 # Monsieur Bao — Site vitrine
 
-Site statique one-page au style [Little Moons](https://littlemoons.fr), pour [Monsieur Bao](https://www.monsieurbao.com).
+Site statique one-page, pour [Monsieur Bao](https://www.monsieurbao.com).
 
 ## Structure
 
