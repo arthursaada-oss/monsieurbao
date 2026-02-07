@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devenir revendeur — Monsieur Bao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bandeau">
+    <p>Désormais disponible dans vos grandes surfaces.</p>
+  </div>
+
+  <header class="header" id="header">
+    <a href="index.html" class="header__logo" aria-label="Monsieur Bao accueil">
+      <img src="images/logo.png" alt="Monsieur Bao">
+    </a>
+    <button class="header__burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#recettes">Nos recettes</a>
+      <a href="index.html#engagements">Nos engagements</a>
+      <a href="index.html#trouver">Trouver nos produits</a>
+      <a href="revendeur.html">Devenir revendeur</a>
+      <a href="index.html#contact">Nous contacter</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="faq-section faq-section--page revendeur-section">
+      <div class="faq-section__inner revendeur-section__content">
+        <h1 class="faq-section__title">Devenir revendeur</h1>
+        <p>Rejoignez le réseau Monsieur Bao et proposez nos baos à vos clients. Nous proposons des offres adaptées aux restaurants, aux traiteurs et aux grandes surfaces.</p>
+
+        <div class="revendeur-block">
+          <h2 class="revendeur-block__title">Pour les restaurants et les traiteurs</h2>
+          <p>Notre gamme professionnelle vous permet de servir des baos comme au restaurant, avec la même qualité que nos adresses parisiennes. Nous proposons :</p>
+          <ul class="revendeur-block__list">
+            <li><strong>Vrac, sucré et salé</strong> — Toutes nos recettes en format professionnel.</li>
+            <li><strong>Formats</strong> — Les baos sont disponibles en mini ou en gros pour s’adapter à vos besoins (carte, volume, type d’événement).</li>
+            <li><strong>Conservation</strong> — Au frais 21 jours ou en surgelé, selon vos besoins en stock et en logistique.</li>
+          </ul>
+        </div>
+
+        <div class="revendeur-block">
+          <h2 class="revendeur-block__title">Pour la GMS</h2>
+          <p>Nos baos sont commercialisés sous la <strong>marque nationale Monsieur Bao</strong>, conditionnés en <strong>sachet doypack</strong> : pratique, résistant et adapté au rayon surgelé. Toute notre production est réalisée <strong>en Île-de-France</strong>, et nos produits se vendent au <strong>surgelé</strong> pour préserver fraîcheur et saveurs jusqu’à chez vos clients.</p>
+        </div>
+
+        <p class="revendeur-section__footnote">Fabrication française, production en Île-de-France — la même exigence pour tous nos circuits.</p>
+      </div>
+
+      <div class="revendeur-form-wrap">
+        <div class="revendeur-form__inner">
+          <h2 class="revendeur-form__title">Demande de partenariat</h2>
+          <p class="revendeur-form__intro">Remplissez le formulaire ci-dessous et nous vous recontacterons.</p>
+          <form class="form-revendeur" action="https://formspree.io/f/xdalnrer" method="POST" aria-label="Formulaire devenir revendeur">
+            <div class="form-revendeur__field">
+              <label for="revendeur-email">Email <span class="form-revendeur__required">*</span></label>
+              <input type="email" id="revendeur-email" name="email" required placeholder="votre@email.com">
+            </div>
+            <div class="form-revendeur__field">
+              <label for="revendeur-magasin">Nom de votre magasin ou établissement <span class="form-revendeur__required">*</span></label>
+              <input type="text" id="revendeur-magasin" name="magasin" required placeholder="Nom du magasin ou établissement">
+            </div>
+            <div class="form-revendeur__field">
+              <label for="revendeur-type">Type d'activité <span class="form-revendeur__required">*</span></label>
+              <select id="revendeur-type" name="type_activite" required>
+                <option value="">— Choisir —</option>
+                <option value="GMS">GMS</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Traiteur">Traiteur</option>
+                <option value="Distributeur">Distributeur</option>
+                <option value="Export">Export</option>
+              </select>
+            </div>
+            <button type="submit" class="form-revendeur__submit">Envoyer ma demande</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__block footer__addresses">
+        <h3 class="footer__title">Nous trouver</h3>
+        <div class="footer__address-item">
+          <span class="footer__label">Siège</span>
+          <p>28 rue de la République<br>92190 Meudon</p>
+        </div>
+        <div class="footer__address-item">
+          <span class="footer__label">Atelier</span>
+          <p>65 Avenue Jean Mermoz<br>93120 La Courneuve</p>
+        </div>
+        <div class="footer__contact">
+          <span class="footer__label">Contact</span>
+          <p><a href="mailto:bonjour@monsieurbao.com">bonjour@monsieurbao.com</a></p>
+          <p><a href="tel:+33651801153">06 51 80 11 53</a></p>
+        </div>
+      </div>
+      <div class="footer__block footer__links">
+        <h3 class="footer__title">Navigation</h3>
+        <a href="index.html#recettes">Nos recettes</a>
+        <a href="index.html#origine">À propos</a>
+        <a href="index.html#trouver">Trouver nos produits</a>
+        <a href="revendeur.html">Devenir revendeur</a>
+        <a href="index.html#contact">Nous contacter</a>
+        <a href="faq.html">Faq</a>
+      </div>
+      <div class="footer__block footer__social">
+        <h3 class="footer__title">Suivez-nous</h3>
+        <a href="https://www.instagram.com/monsieurbaofr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="https://www.linkedin.com/company/monsieur-bao/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://www.tiktok.com/@monsieurbaofr" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+      <p class="footer__copy">© Monsieur Bao</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

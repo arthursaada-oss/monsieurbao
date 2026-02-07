@@ -325,6 +325,10 @@ a:hover { text-decoration: underline; }
   display: inline-block;
 }
 
+.recettes__brand-logo--large {
+  height: 1.265em; /* +15% */
+}
+
 .origine {
   padding: var(--space-2xl) var(--space-xl);
   background: var(--color-bg);
@@ -407,8 +411,78 @@ a:hover { text-decoration: underline; }
 .avis__quote p { margin: 0 0 var(--space-s); font-size: 0.95rem; color: var(--color-text); }
 .avis__quote cite { font-style: normal; font-size: 0.85rem; color: var(--color-text-muted); }
 
+/* Ce qu'ils en pensent — vidéos portrait */
+.temoignages-video {
+  padding: var(--space-3xl) var(--space-xl);
+  background: var(--color-bg);
+}
+.temoignages-video__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-m);
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-2xl);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+}
+.temoignages-video__tiktok {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  transition: color var(--transition), transform var(--transition);
+}
+.temoignages-video__tiktok:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+  transform: scale(1.08);
+}
+.temoignages-video__tiktok-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.temoignages-video__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  justify-items: center;
+}
+.temoignages-video__item {
+  width: 100%;
+  max-width: 280px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow-green);
+  border: var(--card-border-green);
+  background: var(--color-bg-alt);
+}
+.temoignages-video__player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: center;
+  background: var(--color-text-muted);
+}
+
+@media (min-width: 900px) {
+  .temoignages-video__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-l);
+  }
+  .temoignages-video__item { max-width: 260px; }
+}
+
 .engagements {
   padding: var(--space-3xl) var(--space-xl);
+  padding-top: calc(var(--space-3xl) / 4);
   background: var(--color-bg-alt);
 }
 .engagements__heading {
@@ -475,7 +549,10 @@ a:hover { text-decoration: underline; }
 .trouver__title { font-size: 1.5rem; font-weight: 700; letter-spacing: 0.1em; margin: 0 0 var(--space-m); color: var(--color-text); }
 .trouver__inner > p { margin: 0 0 var(--space-2xl); color: var(--color-text-muted); }
 .trouver__map {
-  width: 100%;
+  width: 65%;
+  max-width: 65%;
+  margin-left: auto;
+  margin-right: auto;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -570,6 +647,126 @@ a:hover { text-decoration: underline; }
 .faq-item[open] .faq-item__question::before { content: "−"; }
 .faq-item__answer { padding: 0 var(--space-l) var(--space-m); }
 .faq-item__answer p { margin: 0; padding-left: calc(1em + var(--space-s)); color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.5; }
+
+/* Revendeur page */
+.revendeur-section__content { max-width: 640px; text-align: left; }
+.revendeur-section__content > p:first-of-type { margin-bottom: var(--space-xl); }
+.revendeur-block {
+  margin-bottom: var(--space-2xl);
+  padding: var(--space-l);
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: var(--card-border-green);
+}
+.revendeur-block__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-m);
+  color: var(--color-accent);
+}
+.revendeur-block p { margin: 0 0 var(--space-m); color: var(--color-text-muted); font-size: 0.95rem; }
+.revendeur-block__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.revendeur-block__list li { margin-bottom: var(--space-s); }
+.revendeur-block__list li:last-child { margin-bottom: 0; }
+.revendeur-section__footnote {
+  margin: var(--space-xl) 0 0;
+  padding-top: var(--space-l);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.revendeur-form-wrap {
+  max-width: 480px;
+  margin: var(--space-2xl) auto 0;
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-lg);
+  border: var(--card-border-green);
+}
+.revendeur-form__inner { margin: 0 auto; }
+.revendeur-form__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-s);
+  color: var(--color-text);
+  text-align: center;
+}
+.revendeur-form__intro {
+  margin: 0 0 var(--space-xl);
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.form-revendeur {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+.form-revendeur__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+.form-revendeur__field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+.form-revendeur__required { color: var(--color-accent); }
+.form-revendeur input[type="email"],
+.form-revendeur input[type="text"],
+.form-revendeur select {
+  width: 100%;
+  padding: var(--space-m) var(--space-l);
+  border: 2px solid rgba(74, 107, 92, 0.25);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background: var(--color-white);
+  color: var(--color-text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.form-revendeur input::placeholder { color: var(--color-text-muted); opacity: 0.8; }
+.form-revendeur input:focus,
+.form-revendeur select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+.form-revendeur select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a5652' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-l) center;
+  padding-right: 2.5rem;
+}
+.form-revendeur__submit {
+  margin-top: var(--space-s);
+  padding: var(--space-m) var(--space-xl);
+  background: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.form-revendeur__submit:hover {
+  opacity: 0.95;
+}
 
 .newsletter {
   padding: var(--space-3xl) var(--space-xl);
@@ -702,4 +899,6 @@ a:hover { text-decoration: underline; }
   .newsletter__form { flex-direction: column; }
   .origine__gallery { grid-template-columns: 1fr; }
   .newsletter__form input { min-width: 100%; }
+  .temoignages-video__grid { grid-template-columns: 1fr; }
+  .temoignages-video__item { max-width: 100%; }
 }
