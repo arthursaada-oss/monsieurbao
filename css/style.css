@@ -549,8 +549,8 @@ a:hover { text-decoration: underline; }
 .trouver__title { font-size: 1.5rem; font-weight: 700; letter-spacing: 0.1em; margin: 0 0 var(--space-m); color: var(--color-text); }
 .trouver__inner > p { margin: 0 0 var(--space-2xl); color: var(--color-text-muted); }
 .trouver__map {
-  width: 65%;
-  max-width: 65%;
+  width: 81%;
+  max-width: 81%;
   margin-left: auto;
   margin-right: auto;
   aspect-ratio: 4 / 3;

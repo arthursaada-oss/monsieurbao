@@ -47,4 +47,46 @@
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // --- Couverture vidéo sur mobile : première frame si pas de poster
+  document.querySelectorAll('.temoignages-video__player').forEach(function (video) {
+    if (video.poster && video.poster.trim() !== '') return;
+
+    function captureFirstFrame() {
+      try {
+        if (video.videoWidth === 0 || video.videoHeight === 0) return;
+        var canvas = document.createElement('canvas');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0);
+        video.poster = canvas.toDataURL('image/jpeg', 0.85);
+      } catch (e) {}
+    }
+
+    video.addEventListener('seeked', function onSeeked() {
+      captureFirstFrame();
+    }, { once: true });
+
+    function ensureFirstFrameReady() {
+      if (video.readyState >= 2) {
+        if (video.currentTime === 0) {
+          captureFirstFrame();
+        } else {
+          video.currentTime = 0;
+        }
+      }
+    }
+
+    video.addEventListener('loadeddata', ensureFirstFrameReady, { once: true });
+    video.addEventListener('loadedmetadata', function () {
+      video.currentTime = 0;
+    }, { once: true });
+
+    if (video.readyState >= 2) {
+      ensureFirstFrameReady();
+    } else if (video.readyState >= 1) {
+      video.currentTime = 0;
+    }
+  });
 })();
