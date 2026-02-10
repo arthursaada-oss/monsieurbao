@@ -243,6 +243,7 @@ a:hover { text-decoration: underline; }
 .recettes {
   padding: var(--space-3xl) var(--space-xl);
   background: var(--color-bg-alt);
+  overflow-x: hidden;
 }
 .recettes__heading {
   text-align: center;
@@ -258,6 +259,8 @@ a:hover { text-decoration: underline; }
   gap: var(--space-3xl);
   max-width: var(--max-width);
   margin: 0 auto var(--space-xl);
+  width: 100%;
+  box-sizing: border-box;
 }
 .recettes__block {
   text-align: center;
@@ -266,6 +269,8 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius-lg);
   box-shadow: var(--card-shadow-green);
   border: var(--card-border-green);
+  min-width: 0;
+  overflow: hidden;
 }
 .recettes__block--small { border: var(--card-border-green); }
 .recettes__subtitle {
@@ -280,40 +285,42 @@ a:hover { text-decoration: underline; }
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-m);
   max-width: 100%;
+  width: 100%;
   margin: 0 auto var(--space-m);
   padding: var(--space-l);
   background: #fff;
   border-radius: var(--radius-md);
+  box-sizing: border-box;
 }
 .recettes__sales-grid .recettes__block-img {
   width: 100%;
+  max-width: 100%;
   height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  color: rgba(28, 28, 28, 0.1);
-  background-clip: unset;
-  -webkit-background-clip: unset;
+  display: block;
   border-radius: var(--radius-md);
+  min-width: 0;
+  object-fit: contain;
 }
 .recettes__sucres-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-m);
   max-width: 100%;
+  width: 100%;
   margin: 0 auto var(--space-m);
   padding: var(--space-l);
   background: #fff;
   border-radius: var(--radius-md);
+  box-sizing: border-box;
 }
 .recettes__sucres-grid .recettes__block-img {
   width: 100%;
+  max-width: 100%;
   height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  color: rgba(28, 28, 28, 0.1);
-  background-clip: unset;
-  -webkit-background-clip: unset;
+  display: block;
   border-radius: var(--radius-md);
+  min-width: 0;
+  object-fit: contain;
 }
 .recettes__block-img {
   width: 100%;
@@ -916,6 +923,7 @@ a:hover { text-decoration: underline; }
   .footer__address-item { text-align: center; }
   .footer__links { align-items: center; }
   .footer__social { align-items: center; }
+  .recettes__sales-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -945,6 +953,6 @@ a:hover { text-decoration: underline; }
   .newsletter__form input { min-width: 100%; }
   .temoignages-video__grid { grid-template-columns: 1fr; }
   .temoignages-video__item { max-width: 100%; }
-  .recettes__sales-grid { grid-template-columns: repeat(4, 1fr); gap: var(--space-s); padding: var(--space-m); }
+  .recettes__sales-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-s); padding: var(--space-m); }
   .recettes__sucres-grid { grid-template-columns: 1fr; padding: var(--space-m); }
 }
