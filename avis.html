@@ -41,8 +41,12 @@
       <div class="revendeur-form-wrap">
         <div class="revendeur-form__inner">
           <h2 class="revendeur-form__title">Donnez-nous votre avis</h2>
-          <p class="revendeur-form__intro">Remplissez le formulaire ci-dessous. Tous les champs sont optionnels sauf le bao goûté.</p>
+          <p class="revendeur-form__intro">Remplissez le formulaire ci-dessous. Les champs email et bao goûté sont obligatoires.</p>
           <form class="form-revendeur form-avis" action="https://formspree.io/f/xreazwpr" method="POST" aria-label="Formulaire votre avis">
+            <div class="form-revendeur__field">
+              <label for="avis-email">Email <span class="form-revendeur__required">*</span></label>
+              <input type="email" id="avis-email" name="email" required placeholder="votre@email.com">
+            </div>
             <div class="form-revendeur__field">
               <label for="avis-bao">Quel bao avez-vous goûté ? <span class="form-revendeur__required">*</span></label>
               <select id="avis-bao" name="bao_goute" required>
