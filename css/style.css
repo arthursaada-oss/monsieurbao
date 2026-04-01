@@ -34,7 +34,11 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Évite le défilement horizontal parasite (Safari / grilles) qui décale ou rogne le contenu */
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -73,16 +77,26 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-m);
   padding: var(--space-m) var(--space-xl);
   background: transparent;
   transition: background var(--transition), box-shadow var(--transition);
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 .header.scrolled {
   background: rgba(250, 249, 247, 0.97);
   box-shadow: var(--shadow);
 }
 .header__logo img { height: 50px; width: auto; }
-.header__nav { display: flex; gap: var(--space-l); }
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-l);
+  justify-content: flex-end;
+  min-width: 0;
+}
 .header__nav a { color: var(--color-text); font-weight: 600; font-size: 0.95rem; }
 .header__nav a:hover { color: var(--color-accent); text-decoration: none; }
 .header__burger {
@@ -921,6 +935,8 @@ a:hover { text-decoration: underline; }
   max-width: var(--max-width);
   margin: 0 auto;
   text-align: center;
+  width: 100%;
+  min-width: 0;
 }
 .blog-section__title {
   font-family: var(--font-heading);
@@ -938,11 +954,14 @@ a:hover { text-decoration: underline; }
 }
 .blog-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* auto-fit (pas auto-fill) : les colonnes vides disparaissent → une seule carte occupe toute la largeur */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: var(--space-xl);
   text-align: left;
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
+  min-width: 0;
 }
 .blog-card {
   display: flex;
@@ -951,6 +970,7 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius-lg);
   border: var(--card-border-green);
   box-shadow: var(--card-shadow-green);
+  min-width: 0;
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
