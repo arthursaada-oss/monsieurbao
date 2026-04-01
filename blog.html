@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Votre avis — Monsieur Bao</title>
+  <meta name="description" content="Conseils, accords et idées autour des baos Monsieur Bao — articles et guides pour sublimer vos dégustations.">
+  <title>Blog — Monsieur Bao</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -27,51 +28,25 @@
       <a href="index.html#engagements">Nos engagements</a>
       <a href="index.html#trouver">Trouver nos produits</a>
       <a href="revendeur.html">Devenir revendeur</a>
-      <a href="blog.html">Blog</a>
+      <a href="blog.html" aria-current="page">Blog</a>
       <a href="index.html#contact">Nous contacter</a>
     </nav>
   </header>
 
   <main>
-    <section class="faq-section faq-section--page">
-      <div class="faq-section__inner">
-        <h1 class="faq-section__title">Votre avis</h1>
-        <p>Vous avez goûté nos baos ? Dites-nous ce que vous en avez pensé. Vos retours nous aident à toujours mieux vous satisfaire.</p>
-      </div>
-
-      <div class="revendeur-form-wrap">
-        <div class="revendeur-form__inner">
-          <h2 class="revendeur-form__title">Donnez-nous votre avis</h2>
-          <p class="revendeur-form__intro">Remplissez le formulaire ci-dessous. Les champs email et bao goûté sont obligatoires.</p>
-          <form class="form-revendeur form-avis" action="https://formspree.io/f/xreazwpr" method="POST" aria-label="Formulaire votre avis">
-            <div class="form-revendeur__field">
-              <label for="avis-email">Email <span class="form-revendeur__required">*</span></label>
-              <input type="email" id="avis-email" name="email" required placeholder="votre@email.com">
-            </div>
-            <div class="form-revendeur__field">
-              <label for="avis-bao">Quel bao avez-vous goûté ? <span class="form-revendeur__required">*</span></label>
-              <select id="avis-bao" name="bao_goute" required>
-                <option value="">— Choisir —</option>
-                <option value="Effiloché de poulet">Effiloché de poulet</option>
-                <option value="Légumes">Légumes</option>
-                <option value="Effiloché de porc">Effiloché de porc</option>
-                <option value="Végétarien">Végétarien</option>
-                <option value="Pâte à tartiner noisettes">Pâte à tartiner noisettes</option>
-                <option value="Beurre de cacahuète">Beurre de cacahuète</option>
-                <option value="Plusieurs">Plusieurs</option>
-                <option value="Autre">Autre</option>
-              </select>
-            </div>
-            <div class="form-revendeur__field">
-              <label for="avis-retours">Vos retours ?</label>
-              <textarea id="avis-retours" name="retours" rows="4" placeholder="Votre avis sur le produit..."></textarea>
-            </div>
-            <div class="form-revendeur__field">
-              <label for="avis-suggestions">Vos suggestions ?</label>
-              <textarea id="avis-suggestions" name="suggestions" rows="4" placeholder="Une idée de recette, d'amélioration..."></textarea>
-            </div>
-            <button type="submit" class="form-revendeur__submit">Envoyer</button>
-          </form>
+    <section class="blog-section">
+      <div class="blog-section__inner">
+        <h1 class="blog-section__title">Blog</h1>
+        <p class="blog-section__intro">Recettes d’accords, idées de dégustation et conseils pour profiter au mieux de vos baos — le même esprit qu’au restaurant, chez vous.</p>
+        <div class="blog-list">
+          <article class="blog-card">
+            <a href="blog/que-boire-avec-un-bao.html" class="blog-card__link">
+              <span class="blog-card__meta">Guide</span>
+              <h2 class="blog-card__title">Que boire avec un bao ? Le guide complet des accords boissons</h2>
+              <p class="blog-card__excerpt">Vin blanc, bière artisanale, thé, cocktails… Comment choisir la boisson qui sublime vos baos surgelés Monsieur Bao.</p>
+              <span class="blog-card__cta">Lire l’article →</span>
+            </a>
+          </article>
         </div>
       </div>
     </section>
