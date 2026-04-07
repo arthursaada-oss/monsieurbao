@@ -38,7 +38,7 @@
       <div class="blog-section__inner">
         <h1 class="blog-section__title">Blog</h1>
         <p class="blog-section__intro">Recettes d’accords, idées de dégustation et conseils pour profiter au mieux de vos baos — le même esprit qu’au restaurant, chez vous.</p>
-        <div class="blog-list">
+        <div class="blog-list" data-page-size="6">
           <article class="blog-card">
             <a href="blog/sauces-maison-pour-sublimer-vos-baos.html" class="blog-card__link">
               <span class="blog-card__meta">Recettes</span>
@@ -80,6 +80,11 @@
             </a>
           </article>
         </div>
+        <nav class="blog-pagination" aria-label="Pagination des articles" hidden>
+          <button type="button" class="blog-pagination__btn blog-pagination__btn--prev" aria-label="Page précédente">Précédent</button>
+          <div class="blog-pagination__pages" aria-live="polite"></div>
+          <button type="button" class="blog-pagination__btn blog-pagination__btn--next" aria-label="Page suivante">Suivant</button>
+        </nav>
       </div>
     </section>
   </main>
