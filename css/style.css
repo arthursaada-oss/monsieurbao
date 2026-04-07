@@ -974,6 +974,10 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
+/* Pagination blog : masquage fiable (display:flex sur .blog-card sinon casse [hidden] / attributs) */
+.blog-list > .blog-card.is-paged-hidden {
+  display: none !important;
+}
 .blog-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--card-shadow-green-hover);

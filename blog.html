@@ -148,5 +148,115 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      function initBlogPagination() {
+        var list = document.querySelector('.blog-list');
+        var pagination = document.querySelector('.blog-pagination');
+        if (!list || !pagination) return;
+
+        var cards = [].slice.call(list.querySelectorAll('.blog-card'));
+        var pageSize = parseInt(list.getAttribute('data-page-size') || '6', 10);
+        if (isNaN(pageSize) || pageSize < 1) pageSize = 6;
+
+        var totalPages = Math.max(1, Math.ceil(cards.length / pageSize));
+        var currentPage = 1;
+
+        var prevBtn = pagination.querySelector('.blog-pagination__btn--prev');
+        var nextBtn = pagination.querySelector('.blog-pagination__btn--next');
+        var pagesWrap = pagination.querySelector('.blog-pagination__pages');
+        if (!prevBtn || !nextBtn || !pagesWrap) return;
+
+        function getPageFromUrl() {
+          try {
+            var raw = new URLSearchParams(window.location.search).get('page');
+            var n = parseInt(raw || '1', 10);
+            if (isNaN(n) || n < 1) return 1;
+            return n;
+          } catch (e) {
+            return 1;
+          }
+        }
+
+        function updateUrl(page) {
+          try {
+            var url = new URL(window.location.href);
+            if (page <= 1) url.searchParams.delete('page');
+            else url.searchParams.set('page', String(page));
+            window.history.replaceState({}, '', url.toString());
+          } catch (e) {}
+        }
+
+        function buildPageButtons() {
+          pagesWrap.innerHTML = '';
+          for (var i = 1; i <= totalPages; i += 1) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'blog-pagination__page';
+            btn.textContent = String(i);
+            btn.setAttribute('data-page', String(i));
+            btn.setAttribute('aria-label', 'Aller à la page ' + i);
+            pagesWrap.appendChild(btn);
+          }
+        }
+
+        function renderPage(page, opts) {
+          opts = opts || {};
+          var p = parseInt(page, 10);
+          if (isNaN(p) || p < 1) p = 1;
+          currentPage = Math.min(Math.max(1, p), totalPages);
+          var start = (currentPage - 1) * pageSize;
+          var end = start + pageSize;
+
+          cards.forEach(function (card, index) {
+            var hide = index < start || index >= end;
+            card.classList.toggle('is-paged-hidden', hide);
+            card.setAttribute('aria-hidden', hide ? 'true' : 'false');
+            card.style.setProperty('display', hide ? 'none' : 'flex', 'important');
+          });
+
+          prevBtn.disabled = currentPage === 1;
+          nextBtn.disabled = currentPage === totalPages;
+
+          [].forEach.call(pagesWrap.querySelectorAll('.blog-pagination__page'), function (b) {
+            var bp = parseInt(b.getAttribute('data-page'), 10);
+            if (bp === currentPage) b.setAttribute('aria-current', 'page');
+            else b.removeAttribute('aria-current');
+          });
+
+          if (opts.updateUrl !== false) updateUrl(currentPage);
+          if (opts.scroll) {
+            try {
+              list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } catch (e) {}
+          }
+        }
+
+        if (totalPages <= 1) return;
+
+        pagination.removeAttribute('hidden');
+        buildPageButtons();
+        renderPage(getPageFromUrl(), { updateUrl: false, scroll: false });
+
+        prevBtn.addEventListener('click', function () {
+          renderPage(currentPage - 1, { scroll: true });
+        });
+        nextBtn.addEventListener('click', function () {
+          renderPage(currentPage + 1, { scroll: true });
+        });
+        pagesWrap.addEventListener('click', function (ev) {
+          var btn = ev.target && ev.target.closest ? ev.target.closest('.blog-pagination__page') : null;
+          if (!btn) return;
+          renderPage(btn.getAttribute('data-page'), { scroll: true });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBlogPagination);
+      } else {
+        initBlogPagination();
+      }
+    })();
+  </script>
 </body>
 </html>
