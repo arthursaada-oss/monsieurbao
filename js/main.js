@@ -3,6 +3,77 @@
 
   var HEADER_OFFSET = 80;
 
+  function initCountdown() {
+    var countdownEl = document.getElementById('countdown');
+    var bandeauCountdown = document.getElementById('countdown-bandeau');
+    if (!countdownEl || !bandeauCountdown) return;
+
+    var endAttr = bandeauCountdown.getAttribute('data-countdown-end');
+    var COUNTDOWN_END = endAttr ? new Date(endAttr) : new Date(2026, 6, 1, 0, 0, 0, 0);
+    if (isNaN(COUNTDOWN_END.getTime())) {
+      COUNTDOWN_END = new Date(2026, 6, 1, 0, 0, 0, 0);
+    }
+
+    var valueEls = {
+      days: countdownEl.querySelector('[data-countdown="days"]'),
+      hours: countdownEl.querySelector('[data-countdown="hours"]'),
+      minutes: countdownEl.querySelector('[data-countdown="minutes"]'),
+      seconds: countdownEl.querySelector('[data-countdown="seconds"]')
+    };
+
+    function pad(n) {
+      return n < 10 ? '0' + n : String(n);
+    }
+
+    function pulse(el) {
+      if (!el) return;
+      el.classList.remove('countdown__value--pulse');
+      void el.offsetWidth;
+      el.classList.add('countdown__value--pulse');
+    }
+
+    var prevSeconds = -1;
+
+    function tick() {
+      var diff = COUNTDOWN_END.getTime() - Date.now();
+
+      if (diff <= 0) {
+        bandeauCountdown.classList.add('bandeau--launched');
+        countdownEl.setAttribute('aria-hidden', 'true');
+        return false;
+      }
+
+      var totalSec = Math.floor(diff / 1000);
+      var days = Math.floor(totalSec / 86400);
+      var hours = Math.floor((totalSec % 86400) / 3600);
+      var minutes = Math.floor((totalSec % 3600) / 60);
+      var seconds = totalSec % 60;
+
+      if (valueEls.days) valueEls.days.textContent = String(days);
+      if (valueEls.hours) valueEls.hours.textContent = pad(hours);
+      if (valueEls.minutes) valueEls.minutes.textContent = pad(minutes);
+      if (valueEls.seconds) {
+        valueEls.seconds.textContent = pad(seconds);
+        if (seconds !== prevSeconds) {
+          pulse(valueEls.seconds);
+          prevSeconds = seconds;
+        }
+      }
+      return true;
+    }
+
+    tick();
+    var interval = setInterval(function () {
+      if (!tick()) clearInterval(interval);
+    }, 1000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCountdown);
+  } else {
+    initCountdown();
+  }
+
   // --- Nav sticky : ajouter .scrolled après un certain scroll
   var header = document.getElementById('header');
   if (header) {

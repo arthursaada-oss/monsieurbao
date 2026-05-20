@@ -168,6 +168,105 @@ textarea:focus-visible {
 }
 .bandeau p { margin: 0; }
 
+.bandeau--countdown {
+  padding: var(--space-m) var(--space-l);
+}
+.bandeau__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-m) var(--space-xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.bandeau__message {
+  margin: 0;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.bandeau__message strong {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.98);
+}
+.bandeau__highlight {
+  color: #c8e6d4;
+  font-weight: 700;
+}
+.countdown {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-s);
+  flex-shrink: 0;
+}
+.countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.25rem;
+  padding: var(--space-s) var(--space-m);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.countdown__value {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  min-width: 1.6ch;
+}
+@keyframes countdown-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  40% { transform: scale(1.12); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.countdown__value--pulse {
+  animation: countdown-pulse 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .countdown__value--pulse { animation: none; }
+}
+.countdown__label {
+  margin-top: 0.2rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+.bandeau--launched .countdown { display: none; }
+.bandeau--launched .bandeau__message::after {
+  content: ' — Retrouvez nos baos au rayon frais !';
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+@media (max-width: 640px) {
+  .bandeau__inner {
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+  .bandeau__message { text-align: center; }
+  .countdown { width: 100%; justify-content: center; }
+  .countdown__unit {
+    flex: 1;
+    min-width: 0;
+    max-width: 4.5rem;
+  }
+  .countdown__value { font-size: 1.15rem; }
+}
+
 .header {
   position: sticky;
   top: 0;
