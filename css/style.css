@@ -43,6 +43,13 @@
   --glass-shadow: 0 8px 32px rgba(74, 107, 92, 0.12);
   --glass-shadow-hover: 0 16px 48px rgba(74, 107, 92, 0.18);
   --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  /* Bandeau compte à rebours */
+  --countdown-bg: linear-gradient(90deg, #f5a623 0%, #ff8c42 45%, #ffb347 100%);
+  --countdown-text: #2a1f0f;
+  --countdown-highlight: #b84a00;
+  --countdown-unit-bg: rgba(255, 255, 255, 0.92);
+  --countdown-unit-text: #c45c00;
+  --countdown-unit-border: rgba(255, 255, 255, 0.9);
   /* Legacy card tokens (glass-aligned) */
   --card-border-green: 1px solid var(--glass-border-subtle);
   --card-shadow-green: var(--glass-shadow), var(--glass-highlight);
@@ -170,6 +177,12 @@ textarea:focus-visible {
 
 .bandeau--countdown {
   padding: var(--space-m) var(--space-l);
+  background: var(--countdown-bg);
+  border-bottom: 2px solid rgba(184, 74, 0, 0.35);
+  box-shadow:
+    0 4px 20px rgba(245, 166, 35, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  color: var(--countdown-text);
 }
 .bandeau__inner {
   display: flex;
@@ -187,6 +200,21 @@ textarea:focus-visible {
   line-height: 1.45;
   letter-spacing: 0.02em;
   text-align: left;
+}
+.bandeau--countdown .bandeau__message strong {
+  font-weight: 800;
+  color: var(--countdown-text);
+}
+.bandeau--countdown .bandeau__fresh {
+  color: #1c1c1c;
+  font-weight: inherit;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  filter: none;
+}
+.bandeau--countdown .bandeau__highlight {
+  color: #1c1c1c;
+  font-weight: 800;
 }
 .bandeau__message strong {
   font-weight: 700;
@@ -209,22 +237,25 @@ textarea:focus-visible {
   justify-content: center;
   min-width: 3.25rem;
   padding: var(--space-s) var(--space-m);
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--countdown-unit-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 2px solid var(--countdown-unit-border);
   border-radius: var(--radius-lg);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 4px 12px rgba(184, 74, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 .countdown__value {
   font-family: var(--font-body);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
   display: inline-block;
   min-width: 1.6ch;
+  color: var(--countdown-unit-text);
 }
 @keyframes countdown-pulse {
   0% { transform: scale(1); opacity: 1; }
@@ -240,16 +271,29 @@ textarea:focus-visible {
 .countdown__label {
   margin-top: 0.2rem;
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  opacity: 0.85;
+  color: var(--countdown-text);
+  opacity: 0.75;
+}
+.bandeau--countdown.bandeau--launched {
+  background: linear-gradient(90deg, #5a9e6a 0%, #4a6b5c 100%);
+  color: var(--color-white);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+.bandeau--countdown.bandeau--launched .bandeau__message strong,
+.bandeau--countdown.bandeau--launched .bandeau__message {
+  color: var(--color-white);
 }
 .bandeau--launched .countdown { display: none; }
 .bandeau--launched .bandeau__message::after {
   content: ' — Retrouvez nos baos au rayon frais !';
   font-weight: 600;
   opacity: 0.95;
+}
+.bandeau--launched .bandeau__highlight {
+  color: #ffe9a8;
 }
 
 @media (max-width: 640px) {
