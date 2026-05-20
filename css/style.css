@@ -196,14 +196,10 @@ textarea:focus-visible {
 .bandeau__message {
   margin: 0;
   font-size: clamp(0.85rem, 2vw, 0.95rem);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.45;
   letter-spacing: 0.02em;
   text-align: left;
-}
-.bandeau--countdown .bandeau__message strong {
-  font-weight: 800;
-  color: var(--countdown-text);
 }
 .bandeau--countdown .bandeau__fresh {
   color: #1c1c1c;
@@ -214,15 +210,11 @@ textarea:focus-visible {
 }
 .bandeau--countdown .bandeau__highlight {
   color: #1c1c1c;
-  font-weight: 800;
-}
-.bandeau__message strong {
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.98);
+  font-weight: inherit;
 }
 .bandeau__highlight {
   color: #c8e6d4;
-  font-weight: 700;
+  font-weight: inherit;
 }
 .countdown {
   display: flex;
@@ -282,13 +274,12 @@ textarea:focus-visible {
   color: var(--color-white);
   border-bottom-color: rgba(255, 255, 255, 0.15);
 }
-.bandeau--countdown.bandeau--launched .bandeau__message strong,
 .bandeau--countdown.bandeau--launched .bandeau__message {
   color: var(--color-white);
 }
 .bandeau--launched .countdown { display: none; }
 .bandeau--launched .bandeau__message::after {
-  content: ' — Retrouvez nos baos au rayon frais !';
+  content: ' — Retrouvez vos baos au rayon frais !';
   font-weight: 600;
   opacity: 0.95;
 }
