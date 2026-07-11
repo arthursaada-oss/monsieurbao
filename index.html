@@ -10,31 +10,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/recipes.css">
+  <link rel="stylesheet" href="css/commitments.css">
+  <link rel="stylesheet" href="css/harmony.css">
 </head>
-<body>
-  <div class="bandeau bandeau--countdown" id="countdown-bandeau" data-countdown-end="2026-07-01T00:00:00">
+<body class="home-page">
+  <div class="bandeau bandeau--fresh">
     <div class="bandeau__inner">
       <p class="bandeau__message">
-        Lancement au <span class="bandeau__fresh">rayon frais</span> ! Vos baos arrivent dans <span class="bandeau__highlight">600 magasins</span> le 1<sup>er</sup> juillet
+        <span class="bandeau__new">Nouveau</span>
+        <strong>Les baos frais sont là.</strong>
+        <span class="bandeau__detail">3 recettes ultra-moelleuses, disponibles dans plus de 600 magasins.</span>
       </p>
-      <div class="countdown" id="countdown" aria-live="polite" aria-label="Compte à rebours jusqu'au lancement">
-        <div class="countdown__unit">
-          <span class="countdown__value" data-countdown="days">--</span>
-          <span class="countdown__label">jours</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__value" data-countdown="hours">--</span>
-          <span class="countdown__label">heures</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__value" data-countdown="minutes">--</span>
-          <span class="countdown__label">min</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__value" data-countdown="seconds">--</span>
-          <span class="countdown__label">sec</span>
-        </div>
-      </div>
+      <a class="bandeau__cta" href="#trouver">Les trouver près de chez moi <span aria-hidden="true">→</span></a>
     </div>
   </div>
 
@@ -72,28 +61,52 @@
       <span class="badges__item">VIANDES FRANÇAISES</span>
     </section>
 
-    <section class="origine" id="origine">
-      <div class="origine__inner">
-        <div class="origine__content">
-          <h2 class="origine__title">L'origine de Monsieur Bao</h2>
-          <p class="origine__lead">Tout a commencé en restaurant — et pas n'importe lesquels.</p>
-          <p>Arthur a ouvert cinq restaurants spécialisés dans les dim sum et les bao. Des adresses où la vapeur, la brioche moelleuse et les farces ont pris toute leur place, au cœur de Paris et en région.</p>
-          <p>Ces restaurants ont été reconnus et récompensés dans les guides gastronomiques — notamment par Le Guide du Fooding — et ont forgé une vraie expertise : recettes travaillées, cuisson à la vapeur maîtrisée, et une équipe passionnée en cuisine comme en salle.</p>
-          <p>C'est de tout cela qu'est née l'envie de monter Monsieur Bao avec Clément et Cyril : proposer les mêmes baos, avec la même exigence et le même savoir-faire, à retrouver au rayon surgelé de vos grandes surfaces. L'aventure restaurant continue, autrement.</p>
+    <section class="origine origine--modern" id="origine" aria-labelledby="origine-title">
+      <div class="origine-modern__inner">
+        <header class="origine-modern__header">
+          <p class="origine-modern__eyebrow"><span aria-hidden="true"></span> L’origine de Monsieur Bao</p>
+          <div class="origine-modern__headline">
+            <h2 id="origine-title">Tout est parti<br><em>d’une cuisine.</em></h2>
+            <p>Avant les rayons, il y avait les tables, les paniers vapeur et des équipes passionnées par le geste juste.</p>
+          </div>
+        </header>
+
+        <div class="origine-bento">
+          <article class="origine-card origine-card--restaurant">
+            <img src="images/origine-restaurant.png" alt="Une des adresses de restaurant à l’origine de Monsieur Bao">
+            <div class="origine-card__overlay">
+              <span class="origine-card__kicker">Le point de départ</span>
+              <h3>Le bao comme<br>au restaurant.</h3>
+            </div>
+            <div class="origine-card__stat"><strong>5</strong><span>restaurants<br>spécialisés</span></div>
+          </article>
+
+          <div class="origine-bento__side">
+            <article class="origine-card origine-card--story">
+              <span class="origine-card__kicker">Un savoir-faire maison</span>
+              <h3>Du geste du chef<br>à votre quotidien.</h3>
+              <p>Arthur a ouvert cinq restaurants dédiés aux dim sum et aux baos. Des adresses reconnues, notamment par Le Guide du Fooding, où les recettes et la cuisson vapeur ont été travaillées chaque jour.</p>
+              <p>Avec Clément et Cyril, l’idée devient Monsieur Bao : garder cette même exigence et rendre ces baos accessibles à la maison.</p>
+              <div class="origine-card__signature"><span>Arthur</span><i aria-hidden="true">+</i><span>Clément</span><i aria-hidden="true">+</i><span>Cyril</span></div>
+            </article>
+
+            <div class="origine-bento__photos">
+              <figure class="origine-card origine-card--photo">
+                <img src="images/origine-chefs.png" alt="Chefs préparant des dim sum en cuisine">
+                <figcaption>Le geste</figcaption>
+              </figure>
+              <figure class="origine-card origine-card--photo">
+                <img src="images/origine-table.png" alt="Une table généreuse de dim sum et de baos">
+                <figcaption>Le partage</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
-        <div class="origine__gallery">
-          <figure class="origine__gallery-item">
-            <img src="images/origine-restaurant.png" alt="Intérieur d'un restaurant Monsieur Bao">
-          </figure>
-          <figure class="origine__gallery-item">
-            <img src="images/origine-chefs.png" alt="Chefs en préparation de dim sum">
-          </figure>
-          <figure class="origine__gallery-item">
-            <img src="images/origine-cuisine-vapeur.png" alt="Cuisine à la vapeur, paniers bambou">
-          </figure>
-          <figure class="origine__gallery-item">
-            <img src="images/origine-table.png" alt="Table de dim sum et bao">
-          </figure>
+
+        <div class="origine-modern__journey" aria-label="Du restaurant à votre assiette">
+          <article><span>01</span><div><h3>Les restaurants</h3><p>Les recettes et les gestes appris pendant le service.</p></div></article>
+          <article><span>02</span><div><h3>L’atelier</h3><p>La même exigence dans une fabrication française.</p></div></article>
+          <article><span>03</span><div><h3>Vos rayons</h3><p>Des baos frais et surgelés prêts pour votre quotidien.</p></div></article>
         </div>
       </div>
     </section>
@@ -109,83 +122,148 @@
       </div>
     </section>
 
-    <!-- Nos recettes : packs salés + packs sucrés -->
-    <section class="recettes" id="recettes">
-      <h2 class="recettes__heading">NOS RECETTES</h2>
-      <div class="recettes__double">
-        <div class="recettes__block">
-          <h3 class="recettes__subtitle">Au rayon surgelé salé</h3>
-          <div class="recettes__sales-grid">
-            <img src="images/pack-poulet.png" alt="Monsieur Bao — Effiloché de poulet" class="recettes__block-img">
-            <img src="images/pack-legumes.png" alt="Monsieur Bao — Légumes" class="recettes__block-img">
-            <img src="images/pack-porc.png" alt="Monsieur Bao — Effiloché de porc" class="recettes__block-img">
-            <img src="images/pack-vegetarien.png" alt="Monsieur Bao — Végétarien" class="recettes__block-img">
-          </div>
-          <ul class="recettes__detail-list">
-            <li class="recettes__detail-item">
-              <strong>Effiloché de poulet</strong> — Champignons de Paris, sauce soja
-            </li>
-            <li class="recettes__detail-item">
-              <strong>Légumes</strong> — Choux, carotte et curry rouge
-            </li>
-            <li class="recettes__detail-item">
-              <strong>Effiloché de porc</strong> — Gingembre, sauce soja, piment
-            </li>
-            <li class="recettes__detail-item">
-              <strong>Végétarien</strong> — Aubergine, lardons végétaux <img src="images/la-vie-logo.png" alt="La Vie" class="recettes__brand-logo recettes__brand-logo--large">
-            </li>
-          </ul>
+    <section class="recettes recettes--catalogue" id="recettes">
+      <div class="recettes__intro">
+        <div>
+          <p class="recettes__eyebrow">Le menu Monsieur Bao</p>
+          <h2 class="recettes__heading">Nos recettes</h2>
         </div>
-        <div class="recettes__block recettes__block--small">
-          <h3 class="recettes__subtitle">Au rayon surgelé sucré</h3>
-          <div class="recettes__sucres-grid">
-            <img src="images/pack-cacahuete.png" alt="Monsieur Bao — Beurre de cacahuète" class="recettes__block-img">
-            <img src="images/pack-noisettes.png" alt="Monsieur Bao — Pâte à tartiner noisettes" class="recettes__block-img">
+        <p class="recettes__intro-copy">Des baos généreux, imaginés en restaurant et préparés avec des ingrédients qui ont du goût. À chacun son préféré.</p>
+      </div>
+
+      <div class="recettes__collection recettes__collection--fresh">
+        <div class="recettes__collection-head">
+          <div>
+            <span class="recettes__collection-index">01</span>
+            <h3 class="recettes__collection-title">Au rayon frais</h3>
+            <p class="recettes__collection-description">La nouvelle collection à retrouver dans vos magasins : trois recettes, une brioche ultra-moelleuse et 6 baos par sachet.</p>
           </div>
-          <ul class="recettes__detail-list">
-            <li class="recettes__detail-item">
-              <strong>Beurre de cacahuète</strong> — Aux éclats de cacahuètes (6 x 35g)
-            </li>
-            <li class="recettes__detail-item">
-              <strong>Pâte à tartiner noisettes</strong> — Aux éclats de noisettes (6 x 35g)
-            </li>
-          </ul>
+          <span class="recettes__collection-note">3 recettes <i aria-hidden="true">•</i> 6 baos</span>
+        </div>
+        <div class="recettes__fresh-grid">
+          <article class="recipe-card recipe-card--chicken">
+            <div class="recipe-card__media">
+              <span class="recipe-card__sticker">Le best-seller</span>
+              <img src="images/pack-frais-poulet.jpg" alt="Sachet de baos frais — Effiloché de poulet">
+            </div>
+            <div class="recipe-card__body">
+              <div class="recipe-card__meta"><span>Baos frais</span><span>6 × 35 g</span></div>
+              <h4>Effiloché<br>de poulet</h4>
+              <p>Champignons de Paris <i aria-hidden="true">•</i> sauce soja</p>
+            </div>
+          </article>
+          <article class="recipe-card recipe-card--pork">
+            <div class="recipe-card__media">
+              <span class="recipe-card__sticker">Nouveau</span>
+              <img src="images/pack-frais-porc.jpg" alt="Sachet de baos frais — Effiloché de porc">
+            </div>
+            <div class="recipe-card__body">
+              <div class="recipe-card__meta"><span>Baos frais</span><span>6 × 35 g</span></div>
+              <h4>Effiloché<br>de porc</h4>
+              <p>Gingembre <i aria-hidden="true">•</i> sauce soja <i aria-hidden="true">•</i> piment</p>
+            </div>
+          </article>
+          <article class="recipe-card recipe-card--veggie">
+            <div class="recipe-card__media">
+              <span class="recipe-card__sticker">100% végétal</span>
+              <img src="images/pack-frais-vegetarien.jpg" alt="Sachet de baos frais — Végétarien">
+            </div>
+            <div class="recipe-card__body">
+              <div class="recipe-card__meta"><span>Baos frais</span><span>6 × 35 g</span></div>
+              <h4>Végétarien</h4>
+              <p>Aubergines <i aria-hidden="true">•</i> lardons végétaux La Vie</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="recettes__collection recettes__collection--frozen">
+        <div class="recettes__collection-head">
+          <div>
+            <span class="recettes__collection-index">02</span>
+            <h3 class="recettes__collection-title">Au rayon surgelé</h3>
+            <p class="recettes__collection-description">Les recettes iconiques de Monsieur Bao, à garder toujours sous la main.</p>
+          </div>
+          <span class="recettes__collection-note">Salé <i aria-hidden="true">+</i> sucré</span>
+        </div>
+        <div class="recettes__frozen-grid">
+          <article class="mini-recipe mini-recipe--orange">
+            <div class="mini-recipe__media"><img src="images/pack-poulet.png" alt="Bao surgelé effiloché de poulet"></div>
+            <div><h4>Effiloché de poulet</h4><p>Champignons, sauce soja</p><span class="mini-recipe__format">4 × 55 g</span></div>
+          </article>
+          <article class="mini-recipe mini-recipe--green">
+            <div class="mini-recipe__media"><img src="images/pack-legumes.png" alt="Bao surgelé légumes"></div>
+            <div><h4>Légumes</h4><p>Choux, carotte, curry rouge</p><span class="mini-recipe__format">4 × 55 g</span></div>
+          </article>
+          <article class="mini-recipe mini-recipe--red">
+            <div class="mini-recipe__media"><img src="images/pack-porc.png" alt="Bao surgelé effiloché de porc"></div>
+            <div><h4>Effiloché de porc</h4><p>Gingembre, soja, piment</p><span class="mini-recipe__format">4 × 55 g</span></div>
+          </article>
+          <article class="mini-recipe mini-recipe--pink">
+            <div class="mini-recipe__media"><img src="images/pack-vegetarien.png" alt="Bao surgelé végétarien"></div>
+            <div><h4>Végétarien</h4><p>Aubergine, lardons végétaux</p><span class="mini-recipe__format">4 × 55 g</span></div>
+          </article>
+          <article class="mini-recipe mini-recipe--peanut">
+            <div class="mini-recipe__media"><img src="images/pack-cacahuete.png" alt="Bao sucré au beurre de cacahuète"></div>
+            <div><h4>Beurre de cacahuète</h4><p>Aux éclats de cacahuètes</p><span class="mini-recipe__format">6 × 35 g</span></div>
+          </article>
+          <article class="mini-recipe mini-recipe--hazelnut">
+            <div class="mini-recipe__media"><img src="images/pack-noisettes.png" alt="Bao sucré pâte à tartiner noisettes"></div>
+            <div><h4>Pâte à tartiner noisettes</h4><p>Aux éclats de noisettes</p><span class="mini-recipe__format">6 × 35 g</span></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="engagements" id="engagements">
-      <h2 class="engagements__heading">NOS ENGAGEMENTS</h2>
-      <div class="engagements__grid">
-        <div class="engagements__item">
-          <div class="engagements__icon" aria-hidden="true">
-            <svg class="engagements__picto" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M24 8C12 20 12 34 24 40c12-6 12-20 0-32z"/>
-              <path d="M24 8v32"/>
-            </svg>
+    <section class="engagements engagements--modern" id="engagements" aria-labelledby="engagements-title">
+      <div class="engagements-modern__inner">
+        <header class="engagements-modern__header">
+          <p class="engagements-modern__eyebrow"><span aria-hidden="true"></span> Notre façon de faire</p>
+          <div class="engagements-modern__headline">
+            <h2 id="engagements-title">Des engagements<br><em>qui se goûtent.</em></h2>
+            <p>Du choix des ingrédients à la cuisson vapeur, chaque détail compte pour faire un bao simple, généreux et vraiment bon.</p>
           </div>
-          <p class="engagements__label">FABRICATION FRANÇAISE,<br>VIANDES FRANÇAISES</p>
+        </header>
+
+        <div class="engagements-bento">
+          <article class="engagement-card engagement-card--steam">
+            <div class="engagement-card__copy">
+              <span class="engagement-card__kicker">01 · La texture</span>
+              <h3>Une brioche<br>comme un nuage.</h3>
+              <p>Notre pâte est préparée avec attention puis cuite à la vapeur pour rester légère, douce et ultra-moelleuse.</p>
+            </div>
+            <figure class="engagement-card__photo">
+              <img src="images/carte-pret-a-deguster.png" alt="Baos moelleux prêts à être dégustés">
+            </figure>
+            <span class="engagement-card__stamp" aria-hidden="true">CUIT À LA<br>VAPEUR</span>
+          </article>
+
+          <div class="engagements-bento__side">
+            <article class="engagement-card engagement-card--france">
+              <div class="engagement-card__topline">
+                <span class="engagement-card__kicker">02 · L’origine</span>
+                <span class="engagement-card__flag" aria-label="Drapeau français"><i></i><i></i><i></i></span>
+              </div>
+              <h3>Fabriqué<br>en France.</h3>
+              <p>Nos baos sont fabriqués en France, avec des viandes françaises pour les recettes poulet et porc.</p>
+              <strong class="engagement-card__stat">100% <small>savoir-faire français</small></strong>
+            </article>
+
+            <article class="engagement-card engagement-card--speed">
+              <span class="engagement-card__kicker">03 · Le quotidien</span>
+              <div class="engagement-card__time" aria-label="Prêt en 30 secondes"><strong>30</strong><span>sec.</span></div>
+              <div>
+                <h3>Prêt quand<br>vous l’êtes.</h3>
+                <p>Un format pratique et gourmand, prêt au micro-ondes en quelques secondes.</p>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="engagements__item">
-          <div class="engagements__icon" aria-hidden="true">
-            <svg class="engagements__picto" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 36 Q24 28 34 36"/>
-              <path d="M16 30 Q24 22 32 30"/>
-              <path d="M18 24 Q24 16 30 24" opacity="0.9"/>
-              <path d="M10 40 Q24 32 38 40"/>
-            </svg>
-          </div>
-          <p class="engagements__label">BRIOCHE MOELLEUSE,<br>CUITE À LA VAPEUR</p>
-        </div>
-        <div class="engagements__item">
-          <div class="engagements__icon" aria-hidden="true">
-            <svg class="engagements__picto" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="24" cy="24" r="16"/>
-              <path d="M24 12v12l8 6"/>
-              <path d="M24 8v2M24 38v2M8 24h2M38 24h2M14 14l1.4 1.4M32.6 32.6l1.4 1.4M14 34l1.4-1.4M32.6 15.4l1.4-1.4"/>
-            </svg>
-          </div>
-          <p class="engagements__label">FORMAT PRATIQUE,<br>PRÊT EN 30 SECONDES</p>
+
+        <div class="engagements-modern__footer" aria-label="Les promesses Monsieur Bao">
+          <span>Recettes travaillées</span><i aria-hidden="true">✦</i>
+          <span>Farces généreuses</span><i aria-hidden="true">✦</i>
+          <span>Sans compromis sur le goût</span>
         </div>
       </div>
     </section>

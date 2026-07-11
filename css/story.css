@@ -1,0 +1,322 @@
+/* Origine Monsieur Bao — récit visuel en composition bento */
+
+.origine--modern {
+  background: #eee5d8;
+  color: #20241f;
+  overflow: hidden;
+  padding: clamp(5.5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5.5rem);
+  position: relative;
+}
+
+.origine--modern::before {
+  border: 1px solid rgba(32, 36, 31, 0.1);
+  border-radius: 50%;
+  content: '';
+  height: 34rem;
+  left: -23rem;
+  pointer-events: none;
+  position: absolute;
+  top: 10rem;
+  width: 34rem;
+}
+
+.origine-modern__inner {
+  margin: 0 auto;
+  max-width: 75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.origine-modern__header { margin-bottom: clamp(3rem, 6vw, 5.5rem); }
+
+.origine-modern__eyebrow {
+  align-items: center;
+  color: #cb6e32;
+  display: flex;
+  font-size: 0.68rem;
+  font-weight: 700;
+  gap: 0.65rem;
+  letter-spacing: 0.14em;
+  margin: 0 0 1.25rem;
+  text-transform: uppercase;
+}
+
+.origine-modern__eyebrow span {
+  background: currentColor;
+  border-radius: 50%;
+  height: 0.55rem;
+  width: 0.55rem;
+}
+
+.origine-modern__headline {
+  align-items: end;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(15rem, 0.55fr);
+}
+
+.origine-modern__headline h2 {
+  color: #20241f;
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 6.5vw, 6.4rem);
+  font-weight: 600;
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+  margin: 0;
+}
+
+.origine-modern__headline h2 em { color: #cb6e32; font-weight: 400; }
+
+.origine-modern__headline > p {
+  border-left: 1px solid rgba(32, 36, 31, 0.28);
+  color: #62645e;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin: 0 0 0.3rem;
+  padding-left: 1.2rem;
+}
+
+.origine-bento {
+  display: grid;
+  gap: 1.15rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+}
+
+.origine-card {
+  border-radius: 1.6rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.origine-card__kicker {
+  display: block;
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.origine-card--restaurant {
+  background: #25372f;
+  min-height: 41rem;
+}
+
+.origine-card--restaurant > img {
+  filter: saturate(0.87) contrast(1.05);
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  width: 100%;
+}
+
+.origine-card--restaurant::after {
+  background: linear-gradient(180deg, transparent 28%, rgba(11, 18, 14, 0.78) 100%);
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.origine-card--restaurant:hover > img { transform: scale(1.04); }
+
+.origine-card__overlay {
+  bottom: 2.3rem;
+  color: #fff9ef;
+  left: 2.3rem;
+  position: absolute;
+  z-index: 2;
+}
+
+.origine-card__overlay h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4.4vw, 4.2rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.91;
+  margin: 0.9rem 0 0;
+}
+
+.origine-card__stat {
+  align-items: center;
+  background: #e9934d;
+  border: 2px solid #20241f;
+  border-radius: 50%;
+  color: #20241f;
+  display: flex;
+  flex-direction: column;
+  height: 7.7rem;
+  justify-content: center;
+  position: absolute;
+  right: 1.5rem;
+  text-align: center;
+  top: 1.5rem;
+  transform: rotate(7deg);
+  width: 7.7rem;
+  z-index: 3;
+}
+
+.origine-card__stat strong {
+  font-family: var(--font-heading);
+  font-size: 2.7rem;
+  letter-spacing: -0.08em;
+  line-height: 0.78;
+}
+
+.origine-card__stat span {
+  font-size: 0.53rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+.origine-bento__side { display: grid; gap: 1.15rem; grid-template-rows: minmax(20rem, 1.12fr) minmax(15rem, 0.88fr); }
+
+.origine-card--story {
+  background: #d8c5e2;
+  padding: clamp(1.7rem, 3.5vw, 2.8rem);
+}
+
+.origine-card--story h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3.3rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.94;
+  margin: 1.2rem 0 1.25rem;
+}
+
+.origine-card--story p {
+  color: rgba(32, 36, 31, 0.79);
+  font-size: 0.79rem;
+  line-height: 1.58;
+  margin: 0 0 0.8rem;
+}
+
+.origine-card__signature {
+  align-items: center;
+  border-top: 1px solid rgba(32, 36, 31, 0.24);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.61rem;
+  font-weight: 800;
+  gap: 0.55rem;
+  letter-spacing: 0.09em;
+  margin-top: 1.35rem;
+  padding-top: 0.8rem;
+  text-transform: uppercase;
+}
+
+.origine-card__signature i { color: #9a6293; font-style: normal; }
+
+.origine-bento__photos {
+  display: grid;
+  gap: 1.15rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.origine-card--photo {
+  height: 100%;
+  margin: 0;
+  min-height: 15rem;
+}
+
+.origine-card--photo img {
+  filter: saturate(0.88) contrast(1.03);
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: transform 500ms ease;
+  width: 100%;
+}
+
+.origine-bento__photos .origine-card--photo:first-child img { object-position: center 32%; }
+.origine-bento__photos .origine-card--photo:last-child img { object-position: center 48%; }
+
+.origine-card--photo:hover img { transform: scale(1.05); }
+
+.origine-card--photo::after {
+  background: linear-gradient(180deg, transparent 55%, rgba(11, 18, 14, 0.62));
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+.origine-card--photo figcaption {
+  bottom: 1rem;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  left: 1rem;
+  position: absolute;
+  z-index: 2;
+}
+
+.origine-modern__journey {
+  border-top: 1px solid rgba(32, 36, 31, 0.2);
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+  padding-top: 1.5rem;
+}
+
+.origine-modern__journey article {
+  align-items: flex-start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto 1fr;
+}
+
+.origine-modern__journey article + article { border-left: 1px solid rgba(32, 36, 31, 0.17); padding-left: 1.5rem; }
+
+.origine-modern__journey article > span {
+  align-items: center;
+  border: 1px solid rgba(32, 36, 31, 0.28);
+  border-radius: 50%;
+  display: flex;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  height: 2.6rem;
+  justify-content: center;
+  width: 2.6rem;
+}
+
+.origine-modern__journey h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0 0 0.4rem;
+}
+
+.origine-modern__journey p { color: #66675f; font-size: 0.72rem; line-height: 1.45; margin: 0; max-width: 15rem; }
+
+@media (max-width: 920px) {
+  .origine-bento { grid-template-columns: 1fr; }
+  .origine-card--restaurant { min-height: 34rem; }
+  .origine-bento__side { grid-template-rows: none; }
+}
+
+@media (max-width: 700px) {
+  .origine-modern__headline { display: block; }
+  .origine-modern__headline > p { margin-top: 1.6rem; max-width: 31rem; }
+  .origine-card--restaurant { min-height: 29rem; }
+  .origine-card__overlay { bottom: 1.5rem; left: 1.5rem; }
+  .origine-card__stat { height: 6.3rem; right: 1rem; top: 1rem; width: 6.3rem; }
+  .origine-bento__photos { grid-template-columns: 1fr; }
+  .origine-card--photo { min-height: 18rem; }
+  .origine-modern__journey { grid-template-columns: 1fr; }
+  .origine-modern__journey article + article { border-left: 0; border-top: 1px solid rgba(32, 36, 31, 0.17); padding-left: 0; padding-top: 1.2rem; }
+}
+
+@media (max-width: 430px) {
+  .origine-modern__headline h2 { font-size: 3.2rem; }
+  .origine-card__overlay h3 { font-size: 2.7rem; }
+  .origine-card--story h3 { font-size: 2.35rem; }
+}
