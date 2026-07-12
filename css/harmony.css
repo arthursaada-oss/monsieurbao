@@ -179,7 +179,7 @@
 
 /* Preuves rapides sous le hero */
 .home-page .badges {
-  background: linear-gradient(to bottom, transparent 1.5rem, #eee5d8 1.5rem);
+  background: linear-gradient(to bottom, transparent 1.5rem, var(--home-cream) 1.5rem);
   gap: 0.8rem;
   margin: -1.5rem 0 0;
   max-width: none;
@@ -202,8 +202,11 @@
 .home-page .badges__item:nth-child(3) { background: #c8d6b6; }
 
 .home-page .origine--modern {
+  background: var(--home-cream);
   padding-top: clamp(3.75rem, 7vw, 6rem);
 }
+
+.home-page .recettes--catalogue { background: var(--home-cream); }
 
 /* Deux promesses historiques */
 .home-page .value-blocks {
@@ -219,8 +222,8 @@
   text-align: left;
 }
 
-.home-page .value-blocks__block:first-child { background: #efad6b; }
-.home-page .value-blocks__block:last-child { background: var(--home-lilac); }
+.home-page .value-blocks__block:first-child { background: #fffaf1; border-top: 4px solid var(--home-orange); }
+.home-page .value-blocks__block:last-child { background: #fffaf1; border-top: 4px solid #a487bd; }
 
 .home-page .value-blocks__block:hover {
   border-color: transparent;
@@ -239,7 +242,7 @@
 
 /* Témoignages vidéo */
 .home-page .temoignages-video {
-  background: #ebe1d4;
+  background: var(--home-cream);
   padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5.5rem);
 }
 
@@ -287,7 +290,7 @@
 
 /* Localisation */
 .home-page .trouver {
-  background: var(--home-lilac);
+  background: var(--home-cream);
   padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5.5rem);
   text-align: left;
 }

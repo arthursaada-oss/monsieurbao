@@ -163,6 +163,8 @@
   border: 1px solid rgba(30, 32, 29, 0.12);
   border-radius: 1.25rem;
   box-shadow: 0 1rem 2.5rem rgba(30, 32, 29, 0.08);
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
   transition: box-shadow 280ms ease, transform 280ms ease;
@@ -214,6 +216,7 @@
 .recettes--catalogue .recipe-card--veggie .recipe-card__sticker { background: #db7fa8; }
 
 .recettes--catalogue .recipe-card__body {
+  flex: 1;
   min-height: 10.5rem;
   padding: 1.35rem 1.35rem 1.4rem;
 }
@@ -343,7 +346,19 @@
   .recettes--catalogue .recettes__intro-copy { margin-top: 1.5rem; max-width: 30rem; }
   .recettes--catalogue .recettes__collection-head { align-items: start; display: block; }
   .recettes--catalogue .recettes__collection-note { margin-top: 1.25rem; }
-  .recettes--catalogue .recettes__fresh-grid { margin-right: -1.25rem; padding-right: 1.25rem; }
+  .recettes--catalogue .recettes__fresh-grid {
+    display: flex;
+    gap: 1rem;
+    margin-right: -1.25rem;
+    overflow-x: auto;
+    padding: 0 1.25rem 1rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .recettes--catalogue .recettes__fresh-grid::-webkit-scrollbar { height: 0.35rem; }
+  .recettes--catalogue .recettes__fresh-grid::-webkit-scrollbar-thumb { background: var(--recipes-orange); border-radius: 999px; }
+  .recettes--catalogue .recettes__fresh-grid .recipe-card { flex: 0 0 82vw; min-width: 0; scroll-snap-align: start; }
   .recettes--catalogue .recipe-card__body h4 { font-size: 2.15rem; }
   .recettes--catalogue .recettes__frozen-grid { grid-template-columns: 1fr; }
   .recettes--catalogue .mini-recipe { grid-template-columns: 8rem 1fr; }
