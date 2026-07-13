@@ -334,6 +334,19 @@
   width: 100%;
 }
 
+/* Le bandeau Google My Maps prend de la place sans apporter d'information.
+   On remonte l'iframe dans son écrin pour le masquer tout en conservant
+   la hauteur utile de la carte. */
+.home-page .trouver__map {
+  --map-toolbar-crop: 68px;
+  overflow: hidden;
+}
+
+.home-page .trouver__map iframe {
+  height: calc(100% + var(--map-toolbar-crop));
+  transform: translateY(calc(-1 * var(--map-toolbar-crop)));
+}
+
 .home-page .trouver__enseignes {
   grid-column: 1;
   justify-content: flex-start;
