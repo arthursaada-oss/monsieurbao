@@ -287,6 +287,33 @@ textarea:focus-visible {
   color: #ffe9a8;
 }
 
+/* Consentement Analytics */
+.analytics-consent {
+  position: fixed;
+  z-index: 1200;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: 1rem 1.15rem;
+  color: #fff8ee;
+  background: #25372f;
+  border: 1px solid rgba(255, 248, 238, 0.24);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2.5rem rgba(32, 36, 31, 0.25);
+}
+.analytics-consent__copy strong { display: block; margin-bottom: 0.2rem; font-family: var(--font-heading); font-size: 1.05rem; }
+.analytics-consent__copy p { margin: 0; color: rgba(255, 248, 238, 0.8); font-size: 0.82rem; line-height: 1.4; }
+.analytics-consent__actions { display: flex; flex: 0 0 auto; gap: 0.55rem; }
+.analytics-consent__button { padding: 0.65rem 0.9rem; color: #25372f; background: #f4b06e; border: 1px solid #f4b06e; border-radius: 999px; cursor: pointer; font: inherit; font-size: 0.78rem; font-weight: 700; }
+.analytics-consent__button--secondary { color: #fff8ee; background: transparent; border-color: rgba(255, 248, 238, 0.45); }
+.analytics-consent__button:hover { transform: translateY(-1px); }
+
 @media (max-width: 640px) {
   .bandeau__inner {
     flex-direction: column;
@@ -300,6 +327,11 @@ textarea:focus-visible {
     max-width: 4.5rem;
   }
   .countdown__value { font-size: 1.15rem; }
+}
+
+@media (max-width: 600px) {
+  .analytics-consent { align-items: stretch; flex-direction: column; gap: 0.75rem; }
+  .analytics-consent__actions { justify-content: flex-end; }
 }
 
 .header {

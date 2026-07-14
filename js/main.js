@@ -1,6 +1,70 @@
 (function () {
   'use strict';
 
+  // Google Analytics 4 — chargé uniquement après consentement explicite.
+  var GA_MEASUREMENT_ID = 'G-1SXFZ5X4PM';
+  var GA_CONSENT_KEY = 'monsieurbao-analytics-consent';
+
+  function loadGoogleAnalytics() {
+    if (window.__monsieurBaoGaLoaded || !GA_MEASUREMENT_ID) return;
+    window.__monsieurBaoGaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    document.head.appendChild(script);
+  }
+
+  function initAnalytics() {
+    var choice = null;
+    try { choice = window.localStorage.getItem(GA_CONSENT_KEY); } catch (error) { /* stockage indisponible */ }
+
+    if (choice === 'accepted') {
+      loadGoogleAnalytics();
+      return;
+    }
+    if (choice === 'declined') return;
+
+    var banner = document.createElement('aside');
+    banner.className = 'analytics-consent';
+    banner.setAttribute('aria-label', 'Préférences de mesure d’audience');
+    banner.innerHTML = '<div class="analytics-consent__copy"><strong>Votre expérience compte</strong><p>Nous utilisons une mesure d’audience anonyme pour améliorer le site. Vous pouvez accepter ou refuser.</p></div><div class="analytics-consent__actions"><button type="button" class="analytics-consent__button analytics-consent__button--secondary" data-analytics-choice="declined">Refuser</button><button type="button" class="analytics-consent__button" data-analytics-choice="accepted">Accepter</button></div>';
+    document.body.appendChild(banner);
+
+    banner.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-analytics-choice]');
+      if (!button) return;
+      var value = button.getAttribute('data-analytics-choice');
+      try { window.localStorage.setItem(GA_CONSENT_KEY, value); } catch (error) { /* choix valable pour la session */ }
+      if (value === 'accepted') loadGoogleAnalytics();
+      banner.remove();
+    });
+  }
+
+  function initAnalyticsEvents() {
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a');
+      if (!link || typeof window.gtag !== 'function') return;
+      var href = link.getAttribute('href') || '';
+      var eventName = '';
+      if (href.indexOf('#trouver') !== -1) eventName = 'click_find_store';
+      else if (href.indexOf('#recettes') !== -1) eventName = 'click_recipes';
+      else if (href.indexOf('mailto:') === 0 || href.indexOf('#contact') !== -1) eventName = 'click_contact';
+      if (eventName) window.gtag('event', eventName, { link_text: (link.textContent || '').trim().slice(0, 80) });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { initAnalytics(); initAnalyticsEvents(); });
+  } else {
+    initAnalytics();
+    initAnalyticsEvents();
+  }
+
   var HEADER_OFFSET = 80;
 
   function initCountdown() {
